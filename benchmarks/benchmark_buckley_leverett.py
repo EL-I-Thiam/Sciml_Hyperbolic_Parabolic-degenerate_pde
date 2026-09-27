@@ -48,7 +48,7 @@ def run_benchmark():
                 
         return u, history
 
-    print("Simulating Buckley-Leverett using unified solve_imex_ssp2_step from src/solvers.py...")
+    print("Simulating Buckley-Leverett")
     sim_results = {}
     for ep in all_eps:
         u_f, hist = simulate_bl(ep)
@@ -110,7 +110,7 @@ def run_benchmark():
     fig.savefig('figures/benchmark_3_buckley_leverett.png', dpi=300, bbox_inches='tight')
     fig.savefig('/tmp/figures/benchmark_3_buckley_leverett.png', dpi=300, bbox_inches='tight')
     plt.close(fig)
-    print(">> Saved: figures/benchmark_3_buckley_leverett.png (Unified IMEX-Superbee Solver)")
+    print(">> Saved: figures/benchmark_3_buckley_leverett.png")
 
     # Quantitative Summary Table for Buckley-Leverett across eps_c
     print("\n" + "=" * 85)

@@ -50,7 +50,7 @@ def run_calibration():
     a_init = 1.80; m_init = 1.20
     print(f"Ground Truth Parameters       : a = {a_true:.2f}, m = {m_true:.2f}")
     print(f"Initial Guess Parameters      : a = {a_init:.2f}, m = {m_init:.2f} (a: +80%, m: -40%)")
-    print("Executing REAL L-BFGS-B quasi-Newton optimization coupled to solve_implicit_diffusion_step...")
+    print("Executing L-BFGS-B quasi-Newton optimization coupled to solve_implicit_diffusion_step...")
 
     # Real objective function calling the forward implicit solver
     real_loss_history = []
@@ -152,7 +152,7 @@ def run_calibration():
     fig.savefig('figures/reconstruction_sciml_diffusivite.png', dpi=300)
     fig.savefig('/tmp/figures/reconstruction_sciml_diffusivite.png', dpi=300)
     plt.close(fig)
-    print(">> Saved: figures/reconstruction_sciml_diffusivite.png from genuine live optimization!")
+    print(">> Saved: figures/reconstruction_sciml_diffusivite.png")
 
 if __name__ == "__main__":
     run_calibration()

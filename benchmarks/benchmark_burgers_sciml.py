@@ -22,7 +22,7 @@ plt.rcParams.update({
 })
 
 def solve_viscous_burgers_solver(nu, N=120, Nt=100, Tf=1.0):
-    """Solves u_t + u u_x = nu u_xx on [-1, 1] x [0, Tf] via unified solve_imex_ssp2_step."""
+    """Solves u_t + u u_x = nu u_xx on [-1, 1] x [0, Tf]."""
     L = 1.0; dx = 2.0 * L / N
     x = -L + (np.arange(N) + 0.5) * dx
     dt = Tf / Nt
@@ -121,7 +121,7 @@ def run_benchmark():
     fig11.savefig('figures/benchmark_4_burgers_assimilation.png', dpi=300)
     fig11.savefig('/tmp/figures/benchmark_4_burgers_assimilation.png', dpi=300)
     plt.close(fig11)
-    print(">> Saved: figures/benchmark_4_burgers_assimilation.png (100% computed from solver!)")
+    print(">> Saved: figures/benchmark_4_burgers_assimilation.png")
 
 if __name__ == "__main__":
     run_benchmark()

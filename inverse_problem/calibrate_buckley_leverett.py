@@ -60,7 +60,7 @@ def run_calibration():
 
     print(f"Ground Truth Parameters       : eps_c = {eps_true:.4f}, p = {p_true:.2f}")
     print(f"Initial Guess Parameters      : eps_c = {eps_init:.4f}, p = {p_init:.2f} (eps: +200%, p: -40%)")
-    print("Executing REAL Nelder-Mead simplex optimization coupled to solve_imex_ssp2_step...")
+    print("Executing Nelder-Mead simplex optimization coupled to solve_imex_ssp2_step...")
 
     real_loss_history = []
     def bl_objective(params):
@@ -140,7 +140,7 @@ def run_calibration():
     fig.savefig('figures/reconstruction_buckley_leverett.png', dpi=300)
     fig.savefig('/tmp/figures/reconstruction_buckley_leverett.png', dpi=300)
     plt.close(fig)
-    print(">> Saved: figures/reconstruction_buckley_leverett.png from genuine live optimization!")
+    print(">> Saved: figures/reconstruction_buckley_leverett.png")
 
 if __name__ == "__main__":
     run_calibration()

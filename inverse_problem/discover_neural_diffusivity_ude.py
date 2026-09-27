@@ -82,7 +82,7 @@ def run_ude_discovery():
 
     print(f"Target Non-Power-Law Diffusivity: D(u) = u^2 * (1 + 0.5*u)")
     print(f"Neural Architecture: D_theta(u) = u^2 * Softplus(MLP_theta(u)) [{mlp.n_params} trainable weights]")
-    print("Executing REAL L-BFGS-B optimization through the differentiable implicit forward solver...")
+    print("Executing L-BFGS-B optimization through the differentiable implicit forward solver...")
 
     loss_history = []
     def ude_loss(theta):
@@ -113,7 +113,7 @@ def run_ude_discovery():
     D_true_eval = D_true(u_eval)
     D_learned_eval = mlp(u_eval, res.x)
     rel_l2_err = np.linalg.norm(D_learned_eval - D_true_eval) / np.linalg.norm(D_true_eval) * 100.0
-    print(f"Discovered Neural Model Relative L2 Error: {rel_l2_err:.2f}% (Benchmark Target: ~7.48%)")
+    print(f"Discovered Neural Model Relative L2 Error: {rel_l2_err:.2f}%")
 
     # Generate Figure 12 directly from real optimization data
     fig, axes = plt.subplots(1, 3, figsize=(14.5, 4.2))
@@ -166,7 +166,7 @@ def run_ude_discovery():
     fig.savefig('figures/discovery_ude_diffusivity.png', dpi=300)
     fig.savefig('/tmp/figures/discovery_ude_diffusivity.png', dpi=300)
     plt.close(fig)
-    print(">> Saved: figures/discovery_ude_diffusivity.png from REAL live neural UDE optimization!")
+    print(">> Saved: figures/discovery_ude_diffusivity.png")
 
 if __name__ == "__main__":
     run_ude_discovery()

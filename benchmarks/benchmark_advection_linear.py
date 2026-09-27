@@ -30,7 +30,7 @@ def run_benchmark():
     C, alpha, k = compute_C_from_mass(m, M)
     
     # -------------------------------------------------------------------------
-    # 1. SPATIAL CONVERGENCE ANALYSIS (FIGURE 3 & TABLE 2): 100% COMPUTED VIA SOLVER
+    # 1. SPATIAL CONVERGENCE ANALYSIS (FIGURE 3 & TABLE 2)
     # -------------------------------------------------------------------------
     print("Executing grid convergence simulations for First-Order Upwind and IMEX-Superbee...")
     dx_vals = []
@@ -95,7 +95,7 @@ def run_benchmark():
     print(">> Saved: figures/benchmark_2_advection_linear.png (100% computed from solver)")
 
     # -------------------------------------------------------------------------
-    # 2. TEMPORAL DYNAMICS AND FRONT TRACKING (FIGURE 4): 100% COMPUTED VIA SOLVER
+    # 2. TEMPORAL DYNAMICS AND FRONT TRACKING (FIGURE 4)
     # -------------------------------------------------------------------------
     print("\nExecuting transient profiles and front tracking on fine grid...")
     N_dyn = 280; dx_d = 2.0 * L / N_dyn; x_d = -L + (np.arange(N_dyn) + 0.5) * dx_d
@@ -165,10 +165,10 @@ def run_benchmark():
     fig4.savefig('figures/comparaison_temporelle_profils_exact_simule.png', dpi=300)
     fig4.savefig('/tmp/figures/comparaison_temporelle_profils_exact_simule.png', dpi=300)
     plt.close(fig4)
-    print(">> Saved: figures/comparaison_temporelle_profils_exact_simule.png (100% computed from solver)")
+    print(">> Saved: figures/comparaison_temporelle_profils_exact_simule.png")
 
     # -------------------------------------------------------------------------
-    # 3. PARAMETRIC STUDY OVER c AND m (FIGURE 5 & TABLE 3): 100% COMPUTED VIA SOLVER
+    # 3. PARAMETRIC STUDY OVER c AND m (FIGURE 5 & TABLE 3)
     # -------------------------------------------------------------------------
     print("\nExecuting multi-parametric sweep (c in [0.2, 0.5, 1.0, 2.0, 3.0], m in [1.0, 2.0, 3.0])...")
     c_sweep = [0.2, 0.5, 1.0, 2.0, 3.0]
@@ -267,7 +267,7 @@ def run_benchmark():
     fig5.savefig('figures/etude_parametrique_erreurs_moyennes.png', dpi=300)
     fig5.savefig('/tmp/figures/etude_parametrique_erreurs_moyennes.png', dpi=300)
     plt.close(fig5)
-    print(">> Saved: figures/etude_parametrique_erreurs_moyennes.png (100% computed from solver)")
+    print(">> Saved: figures/etude_parametrique_erreurs_moyennes.png")
 
 if __name__ == "__main__":
     run_benchmark()
